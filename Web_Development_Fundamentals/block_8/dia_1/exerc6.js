@@ -63,8 +63,10 @@ const books = [
   },
 ];
 
-function authorBornIn1947() {
-    return books.find(object => object.author.birthYear === 1947).author.name;
+const expected_result = true
+
+function someBookWasReleaseOnThe80s() {
+  return books.some((book) => book.releaseYear >= 1980 && book.releaseYear <= 1989);
 }
 
-assert.equal(authorBornIn1947(), 'Stephen King');
+assert.equal(someBookWasReleaseOnThe80s(), expected_result);
