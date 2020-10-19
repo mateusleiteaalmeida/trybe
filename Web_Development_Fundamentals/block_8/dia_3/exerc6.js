@@ -6,7 +6,7 @@ const notas = [[9, 8, 10, 7, 5], [10, 9, 9, 10, 8], [10, 7, 10, 8, 9]];
 
 
 function studentAverage() {
-  const studentGrades = notas.map(array => array.reduce((acc, curr, ind, arr) => acc + curr, 0) / 5);
+  const studentGrades = notas.map((array) => array.reduce((acc, curr) => acc + curr, 0) / 5);
   const nameAndGrade = alunos.map((student, index) => ({
       name: student,
       average: (studentGrades[index])
