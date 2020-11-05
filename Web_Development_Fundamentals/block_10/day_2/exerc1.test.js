@@ -2,7 +2,7 @@ const uppercase = (str, callback) => {
   callback(str.toUpperCase());
 }
 
-test('Retorne a lista de animais', (done) => {
+test('Converts a string to uppercase letters', (done) => {
   uppercase('trybe', (string) => {
     expect(string).toBe('TRYBE');
     done();
