@@ -21,5 +21,10 @@ describe('getUserName', () => {
     test('if the user is found', () => {
       expect.assertions(1);
       return getUserName(4).then(res => expect(res).toEqual('Mark'));
-  });
+    });
+
+    test('if the user is not found', () => {
+      expect.assertions(1);
+      return getUserName(6).catch(res => expect(res).toEqual({ error: 'User with 6 not found.'}));
+    }); 
 });
