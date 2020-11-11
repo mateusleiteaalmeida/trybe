@@ -3,7 +3,7 @@ import React from 'react';
 class Pokemon extends React.Component {
   render () {
     const properties = this.props;
-    const { name, type, averageWeight, image } = properties.pokemon;
+    const { name, type, averageWeight, image } = properties.pokemons;
     return (
         <div>
             <p>{name}</p>
