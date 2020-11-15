@@ -46,6 +46,23 @@ class App extends Component {
             </label>
 
           </fieldset>
+          
+          <fieldset>
+            <label>
+              Currículo
+              <textarea name="resume" maxLength="1000" required />
+            </label>
+
+            <label>
+              Cargo
+              <textarea name="position" maxLength="40" required />
+            </label>
+
+            <label>
+              Descrição do cargo
+              <input name="position description" maxLength="500" required />
+            </label>
+          </fieldset>
         </form>
       </div>
     )
