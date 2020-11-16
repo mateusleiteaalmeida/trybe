@@ -1,6 +1,21 @@
 import React, { Component } from 'react';
 
 class App extends Component {
+constructor(props) {
+  super(props);
+  this.state = {
+    name: '',
+    email: '',
+    cpf: '',
+    address: '',
+    city: '',
+    countryState: '',
+    resume: '',
+    position: '',
+    positionDescription: '',
+  }
+}
+
   render() {
     return (
       <div>
@@ -24,7 +39,7 @@ class App extends Component {
 
             <label>
               Endereço
-              <input name="adress" maxLength="200" required />
+              <input name="address" maxLength="200" required />
             </label>
 
             <label>
@@ -34,7 +49,7 @@ class App extends Component {
 
             <label>
               Estado
-              <input name="state" required />
+              <input name="countryState" required />
             </label>
 
             <label>
@@ -60,7 +75,7 @@ class App extends Component {
 
             <label>
               Descrição do cargo
-              <input name="position description" maxLength="500" required />
+              <input name="positionDescription" maxLength="500" required />
             </label>
           </fieldset>
         </form>
