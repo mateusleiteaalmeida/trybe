@@ -1,20 +1,29 @@
 import React, { Component } from 'react';
 
 class App extends Component {
-constructor(props) {
-  super(props);
-  this.state = {
-    name: '',
-    email: '',
-    cpf: '',
-    address: '',
-    city: '',
-    countryState: '',
-    resume: '',
-    position: '',
-    positionDescription: '',
+  constructor(props) {
+    super(props);
+
+    this.handleUpperCaseInput = this.handleUpperCaseInput.bind(this)
+
+    this.state = {
+      name: '',
+      email: '',
+      cpf: '',
+      address: '',
+      city: '',
+      countryState: '',
+      resume: '',
+      position: '',
+      positionDescription: '',
+    }
   }
-}
+
+  handleUpperCaseInput(event) {
+    let { name, value } = event.target;
+    if (name === 'name') value = value.toUpperCase()
+    this.updateState(name, value)
+  }
 
   render() {
     return (
@@ -24,7 +33,7 @@ constructor(props) {
           <fieldset>
             <label>
               Nome
-              <input name="name" maxLength="40" required />
+              <input name="name" value={value.target.name} maxLength="40" required />
             </label>
 
             <label>
