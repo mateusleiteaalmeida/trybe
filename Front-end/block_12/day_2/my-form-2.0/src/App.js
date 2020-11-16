@@ -3,9 +3,6 @@ import React, { Component } from 'react';
 class App extends Component {
   constructor(props) {
     super(props);
-
-    this.handleUpperCaseInput = this.handleUpperCaseInput.bind(this)
-
     this.state = {
       name: '',
       email: '',
@@ -33,7 +30,7 @@ class App extends Component {
           <fieldset>
             <label>
               Nome
-              <input name="name" value={value.target.name} maxLength="40" required />
+              <input name="name" value={this.state.name} maxLength="40" required />
             </label>
 
             <label>
