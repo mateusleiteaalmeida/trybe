@@ -22,6 +22,10 @@ class App extends Component {
     this.updateState(name, value)
   }
 
+  validateAddress(address) {
+    address.replace(/[^\w\s]/gi, '')
+  }
+
   render() {
     return (
       <div>
@@ -30,7 +34,7 @@ class App extends Component {
           <fieldset>
             <label>
               Nome
-              <input name="name" value={this.state.name} maxLength="40" required />
+              <input name="name" value={this.state.name} onChange={this.handleUpperCaseInput} maxLength="40" required />
             </label>
 
             <label>
@@ -45,7 +49,7 @@ class App extends Component {
 
             <label>
               Endereço
-              <input name="address" maxLength="200" required />
+              <input name="address" value={this.state.address} onChange={this.validateAddress} maxLength="200" required />
             </label>
 
             <label>
