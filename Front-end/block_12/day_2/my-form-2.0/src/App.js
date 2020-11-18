@@ -30,6 +30,10 @@ class App extends Component {
     if (city.value.match(/^\d/)) ''
   }
 
+  throwWarning() {
+    alert('Preencha com cuidado esta informação')
+  }
+
   render() {
     return (
       <div>
@@ -79,7 +83,7 @@ class App extends Component {
           <fieldset>
             <label>
               Currículo
-              <textarea name="resume" maxLength="1000" required />
+              <textarea name="resume" maxLength="1000" onMouseEnter={this.throwWarning} required />
             </label>
 
             <label>
