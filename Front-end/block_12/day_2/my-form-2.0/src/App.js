@@ -26,6 +26,10 @@ class App extends Component {
     address.replace(/[^\w\s]/gi, '')
   }
 
+  valideCity(city) {
+    if (city.value.match(/^\d/)) ''
+  }
+
   render() {
     return (
       <div>
