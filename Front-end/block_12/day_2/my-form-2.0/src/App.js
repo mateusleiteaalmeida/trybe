@@ -58,7 +58,7 @@ class App extends Component {
 
             <label>
               Cidade
-              <input name="city" maxLength="28" required />
+              <input name="city" maxLength="28" onBlur={this.valideCity} required />
             </label>
 
             <label>
