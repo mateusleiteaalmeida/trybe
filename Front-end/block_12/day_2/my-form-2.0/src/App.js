@@ -88,12 +88,14 @@ class App extends Component {
               value={this.state.email}
               maxLength="50"
               required
-              onChange={this.handleChange} />
+              onChange={this.handleChange}
+              />
             </label>
 
             <label>
               CPF
-              <input 
+              <input
+              type="number"
               name="cpf"
               value={this.state.cpf}
               maxLength="11"
