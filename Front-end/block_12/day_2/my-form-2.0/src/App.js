@@ -1,8 +1,39 @@
 import React, { Component } from 'react';
 
+const states = [
+  'Acre',
+  'Alagoas',
+  'Amapá',
+  'Amazonas',
+  'Bahia',
+  'Ceará',
+  'Distrito Federal',
+  'Espírito Santo',
+  'Goiás',
+  'Maranhão',
+  'Mato Grosso',
+  'Mato Grosso do Sul',
+  'Minas Gerais',
+  'Pará',
+  'Paraíba',
+  'Paraná',
+  'Pernambuco',
+  'Piauí',
+  'Rio de Janeiro',
+  'Rio Grande do Norte',
+  'Rio Grande do Sul',
+  'Rondônia',
+  'Roraima',
+  'Santa Catarina',
+  'São Paulo',
+  'Sergipe',
+  'Tocantins'
+]
+
 class App extends Component {
   constructor(props) {
     super(props);
+    this.handleChange = this.handleChange.bind(this);
     this.state = {
       name: '',
       email: '',
@@ -21,10 +52,6 @@ class App extends Component {
     if (name === 'name') value = value.toUpperCase()
     if (name === 'address') value = value.replace(/[^\w\s]/gi, '')
     this.setState({ [name]: value });
-  }
-
-  validateCity(city) {
-    if (city.value.match(/^\d/)) ''
   }
 
   throwWarning() {
@@ -80,15 +107,20 @@ class App extends Component {
               <input
               name="city"
               maxLength="28"
-              onBlur={this.validateCity}
+//              onBlur={}
               required />
             </label>
 
             <label>
               Estado
-              <input
+              <select
               name="countryState"
-              required />
+              required
+              onChange={this.handleChange}>
+                {states.forEach(state => {
+                  return (<option>{state}</option>)
+                })}
+              </select>
             </label>
 
             <label>
