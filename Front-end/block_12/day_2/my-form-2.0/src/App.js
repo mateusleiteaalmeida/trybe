@@ -34,6 +34,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
+    this.validateCity = this.validateCity.bind(this);
     this.state = {
       name: '',
       email: '',
@@ -48,9 +49,15 @@ class App extends Component {
   }
 
   handleChange({ target }) {
-    const { name, value } = target;
+    let { name, value } = target;
     if (name === 'name') value = value.toUpperCase()
     if (name === 'address') value = value.replace(/[^\w\s]/gi, '')
+    this.setState({ [name]: value });
+  }
+
+  validateCity(event) {
+    let { name, value } = event.target;
+    if(name === 'city') value = value.match(/^\d/) ? '' : value
     this.setState({ [name]: value });
   }
 
@@ -69,7 +76,6 @@ class App extends Component {
               <input
               name="name"
               value={this.state.name}
-              onChange={this.handleChange}
               maxLength="40"
               required
               onChange={this.handleChange} />
@@ -107,7 +113,7 @@ class App extends Component {
               <input
               name="city"
               maxLength="28"
-//              onBlur={}
+              onBlur={this.validateCity}
               required />
             </label>
 
@@ -117,7 +123,7 @@ class App extends Component {
               name="countryState"
               required
               onChange={this.handleChange}>
-                {states.forEach(state => {
+                {states.map(state => {
                   return (<option>{state}</option>)
                 })}
               </select>
