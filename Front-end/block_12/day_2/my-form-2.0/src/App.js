@@ -85,6 +85,7 @@ class App extends Component {
               Email
               <input
               name="email"
+              value={this.state.email}
               maxLength="50"
               required
               onChange={this.handleChange} />
@@ -94,6 +95,7 @@ class App extends Component {
               CPF
               <input 
               name="cpf"
+              value={this.state.cpf}
               maxLength="11"
               required />
             </label>
@@ -112,6 +114,7 @@ class App extends Component {
               Cidade
               <input
               name="city"
+              value={this.state.city}
               maxLength="28"
               onBlur={this.validateCity}
               required />
@@ -121,6 +124,7 @@ class App extends Component {
               Estado
               <select
               name="countryState"
+              value={this.state.countryState}
               required
               onChange={this.handleChange}>
                 {states.map(state => {
@@ -148,6 +152,7 @@ class App extends Component {
               Currículo
               <textarea
               name="resume"
+              value={this.state.resume}
               maxLength="1000"
               onMouseEnter={this.throwWarning}
               required />
@@ -157,14 +162,16 @@ class App extends Component {
               Cargo
               <textarea
               name="position"
+              value={this.state.position}
               maxLength="40"
               required />
             </label>
 
             <label>
               Descrição do cargo
-              <input
+              <textarea
               name="positionDescription"
+              value={this.state.positionDescription}
               maxLength="500"
               required />
             </label>
