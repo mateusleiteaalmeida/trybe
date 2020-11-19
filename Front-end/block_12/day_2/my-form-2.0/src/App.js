@@ -16,17 +16,14 @@ class App extends Component {
     }
   }
 
-  handleUpperCaseInput(event) {
-    let { name, value } = event.target;
+  handleChange({ target }) {
+    const { name, value } = target;
     if (name === 'name') value = value.toUpperCase()
-    this.updateState(name, value)
+    if (name === 'address') value = value.replace(/[^\w\s]/gi, '')
+    this.setState({ [name]: value });
   }
 
-  validateAddress(address) {
-    address.replace(/[^\w\s]/gi, '')
-  }
-
-  valideCity(city) {
+  validateCity(city) {
     if (city.value.match(/^\d/)) ''
   }
 
@@ -42,32 +39,56 @@ class App extends Component {
           <fieldset>
             <label>
               Nome
-              <input name="name" value={this.state.name} onChange={this.handleUpperCaseInput} maxLength="40" required />
+              <input
+              name="name"
+              value={this.state.name}
+              onChange={this.handleChange}
+              maxLength="40"
+              required
+              onChange={this.handleChange} />
             </label>
 
             <label>
               Email
-              <input name="email" maxLength="50" required />
+              <input
+              name="email"
+              maxLength="50"
+              required
+              onChange={this.handleChange} />
             </label>
 
             <label>
               CPF
-              <input name="cpf" maxLength="11" required />
+              <input 
+              name="cpf"
+              maxLength="11"
+              required />
             </label>
 
             <label>
               Endereço
-              <input name="address" value={this.state.address} onChange={this.validateAddress} maxLength="200" required />
+              <input
+              name="address"
+              value={this.state.address}
+              onChange={this.handleChange}
+              maxLength="200"
+              required />
             </label>
 
             <label>
               Cidade
-              <input name="city" maxLength="28" onBlur={this.valideCity} required />
+              <input
+              name="city"
+              maxLength="28"
+              onBlur={this.validateCity}
+              required />
             </label>
 
             <label>
               Estado
-              <input name="countryState" required />
+              <input
+              name="countryState"
+              required />
             </label>
 
             <label>
@@ -83,17 +104,27 @@ class App extends Component {
           <fieldset>
             <label>
               Currículo
-              <textarea name="resume" maxLength="1000" onMouseEnter={this.throwWarning} required />
+              <textarea
+              name="resume"
+              maxLength="1000"
+              onMouseEnter={this.throwWarning}
+              required />
             </label>
 
             <label>
               Cargo
-              <textarea name="position" maxLength="40" required />
+              <textarea
+              name="position"
+              maxLength="40"
+              required />
             </label>
 
             <label>
               Descrição do cargo
-              <input name="positionDescription" maxLength="500" required />
+              <input
+              name="positionDescription"
+              maxLength="500"
+              required />
             </label>
           </fieldset>
         </form>
