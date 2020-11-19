@@ -131,9 +131,13 @@ class App extends Component {
 
             <label>
               Tipo da residência
-              <input type="radio" />
+              <input 
+              name="residenceType"
+              type="radio" />
                 <label>Casa</label>
-              <input type="radio" />
+              <input 
+              name="residenceType"
+              type="radio" />
                 <label>Apartamento</label>
             </label>
 
