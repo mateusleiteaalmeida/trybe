@@ -33,4 +33,4 @@ describe("testing functions with strings", () => {
   });
 });
 
-module.exports = { upperCase };
+module.exports = { upperCase, firstLetter, concatenate };
