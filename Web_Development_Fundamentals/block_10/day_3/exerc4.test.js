@@ -39,4 +39,4 @@ describe("testing functions with strings", () => {
   });
 });
 
-module.exports = { upperCase, firstLetter, concatenate };
+module.exports = { upperCase };

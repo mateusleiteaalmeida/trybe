@@ -1,15 +1,15 @@
-const getFunc = require("./exerc4.test");
+const getFunc = require("./exerc4.test")
 
-describe("testando implementações", () => {
-  test("mockando função para receber um parâmetro e retornar em caixa baixa", () => {
-    const upper = jest
+describe("testing upperCase and lowerCase", () => {
+  test("mocking function to receive a string and return it in lower case", () => {
+    const mockUpperCase = jest
       .spyOn(getFunc, "upperCase")
       .mockImplementation(string => string.toLowerCase());
 
-    expect(upper("STRING")).toBe("string");
-    expect(upper).toHaveBeenCalled();
-    expect(upper).toHaveBeenCalledTimes(1);
-    expect(upper).toHaveBeenCalledWith("STRING");
+    expect(mockUpperCase("STRING")).toBe("string");
+    expect(mockUpperCase).toHaveBeenCalled();
+    expect(mockUpperCase).toHaveBeenCalledTimes(1);
+    expect(mockUpperCase).toHaveBeenCalledWith("STRING");
 
     getFunc.upperCase.mockRestore();
 
