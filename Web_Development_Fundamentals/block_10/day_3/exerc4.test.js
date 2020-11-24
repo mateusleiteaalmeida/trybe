@@ -29,7 +29,7 @@ describe("testing functions with strings", () => {
     expect(firstLetter).toHaveBeenCalledWith("string");
   });
  
-  test("mocking function to receive three strings and concatanate them", () => {
+  test("mocking function to receive three strings and concatenate them", () => {
     concatenate = jest.fn().mockImplementation((string1, string2, string3) => string1.concat(string2, string3));
 
     expect(concatenate("a", "b", "c")).toBe("abc");
@@ -38,3 +38,5 @@ describe("testing functions with strings", () => {
     expect(concatenate).toHaveBeenCalledWith("a", "b", "c");
   });
 });
+
+module.exports = { upperCase, firstLetter, concatenate };
