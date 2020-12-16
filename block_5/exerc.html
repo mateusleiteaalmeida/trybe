@@ -76,7 +76,13 @@ function changeParagraphText2() {
 }
 changeParagraphText2();
 //Crie uma função que exiba o conteúdo de todas as tags <p> no console.
-
+function showParagraph() {
+  const getParagraphs = document.getElementsByTagName('p');
+  for (let index = 0; index < getParagraphs.length; index += 1) {
+    console.log(getParagraphs[index].innerText);
+  }
+}
+showParagraph();
     </script>
   </body>
 </html>
