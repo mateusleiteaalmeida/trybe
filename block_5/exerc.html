@@ -52,13 +52,13 @@ function changeParagraphText() {
 }
 changeParagraphText();
 //Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
-function changeToGreen() {
+function changeSquareToGreen() {
   const getSquare = document.getElementsByClassName('main-content')[0];
   getSquare.style.background = "rgb(76,164,109)";
 }
 changeSquareToGreen();
 //Crie uma função que mude a cor do quadrado vermelho para branco.
-function changeToWhite() {
+function changeSquareToWhite() {
   const getSquare = document.getElementsByClassName('center-content')[0];
   getSquare.style.background = "white";
 }
@@ -70,6 +70,11 @@ function changeHeadingText() {
 }
 changeHeadingText();
 //Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
+function changeParagraphText2() {
+  const getParagraph = document.getElementsByTagName('p')[0];
+  getParagraph.innerText = getParagraph.innerText.toUpperCase();
+}
+changeParagraphText2();
 //Crie uma função que exiba o conteúdo de todas as tags <p> no console.
 
     </script>
