@@ -50,14 +50,19 @@ function changeText() {
   const getParagraph = document.getElementsByTagName('p')[1];
   getParagraph.innerText = "Vou estar construindo uma carreira muito interessante.";
 }
-changeText()
+changeText();
 //Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
-function changeColor() {
+function changeToGreen() {
   const getSquare = document.getElementsByClassName('main-content')[0];
   getSquare.style.background = "rgb(76,164,109)";
 }
-changeColor();
+changeToGreen();
 //Crie uma função que mude a cor do quadrado vermelho para branco.
+function changeToWhite() {
+  const getSquare = document.getElementsByClassName('center-content')[0];
+  getSquare.style.background = "white";
+}
+changeToWhite();
 //Crie uma função que corrija o texto da tag <h1>.
 //Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
 //Crie uma função que exiba o conteúdo de todas as tags <p> no console.
