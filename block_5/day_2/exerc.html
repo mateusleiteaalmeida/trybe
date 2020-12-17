@@ -77,7 +77,11 @@
     // 5. Adicione a tag div com a classe left-content como filho da tag div criada no passo 2;
     const addDivLeft = document.createElement('div');
     addDivLeft.className = 'left-content';
-    addDivCenter.appendChild(addDivLeft);
+    addDivMain.appendChild(addDivLeft);
+    // 6. Adicione a tag div com a classe right-content como filho da tag div criada no passo 2;
+    const addDivRight = document.createElement('div');
+    addDivRight.className = 'right-content';
+    addDivMain.appendChild(addDivRight);
     </script>
   </body>
 </html>
