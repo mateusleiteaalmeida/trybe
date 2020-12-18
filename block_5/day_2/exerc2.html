@@ -59,11 +59,11 @@
     <script>
     // COLOQUE SEU CÓDIGO AQUI
     // Parte 1
-    // 1. Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body ;
+    // 1. Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body;
     const addH1 = document.createElement('h1');
     addH1.innerHTML = 'Exercício 5.2 - JavaScript DOM';
     document.body.appendChild(addH1);
-    // 2. Adicione a tag div com a classe main-content como filho da tag body ;
+    // 2. Adicione a tag div com a classe main-content como filho da tag body;
     const addDivMain = document.createElement('div');
     addDivMain.className = 'main-content';
     document.body.appendChild(addDivMain);
@@ -102,9 +102,15 @@
       addDivMain.appendChild(addH3);
     }
     // Parte 2
-    // 1. Adicione a classe title na tag h1 criada.
+    // 1. Adicione a classe title na tag h1 criada;
     const title = document.getElementsByTagName('h1')[0]
     title.className = 'title';
+    // 2. Adicione a classe description nas 3 tags h3 criadas;
+    const titles = document.getElementsByTagName('h3')
+    for (index = 0; index < titles.length; index += 1) {
+      titles[index].className = 'description';
+    }
+    
     </script>
   </body>
 </html>
