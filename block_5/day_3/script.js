@@ -97,3 +97,20 @@ function changeFridaysText(fridays) {
 }
 
 changeFridaysText([4, 11, 18, 25]);
+
+function zoomInDayText() {
+  const days = document.getElementById('days');
+  days.addEventListener('mouseover', function(event) {
+      event.target.style.fontSize = '40px';
+  })
+};
+
+function zoomOutDayText() {
+  const days = document.getElementById('days');
+  days.addEventListener('mouseout', function(event) {
+      event.target.style.fontSize = '20px';
+  })
+};
+
+zoomInDayText();
+zoomOutDayText();
