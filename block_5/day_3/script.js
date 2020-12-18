@@ -42,7 +42,7 @@ function createDaysOfTheMonth(){
 }
 createDaysOfTheMonth();
 
-function createHolidays(name) {
+function createHolidaysButton(name) {
   const button = document.createElement('button');
   button.id = 'btn-holiday';
   button.innerHTML = name;
@@ -50,7 +50,7 @@ function createHolidays(name) {
   getContainer.appendChild(button);
 }
 
-createHolidays('Feriados');
+createHolidaysButton('Feriados');
 
 function colorHolidaysBackground() {
   const getButton = document.getElementById('btn-holiday');
@@ -70,3 +70,12 @@ function colorHolidaysBackground() {
 
 colorHolidaysBackground();
 
+function createFridaysButton(name) {
+  const button = document.createElement('button');
+  button.id = 'btn-friday';
+  button.innerHTML = name;
+  const getContainer = document.getElementsByClassName('buttons-container')[0];
+  getContainer.appendChild(button);
+}
+
+createFridaysButton("Sexta-feira");
