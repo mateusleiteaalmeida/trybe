@@ -28,7 +28,7 @@ function createDaysOfTheMonth(){
       li.className = 'day holiday';
       li.innerHTML = day;
       ul.appendChild(li);
-    } else if (day === 4 || day === 11 || day === 17) {
+    } else if (day === 4 || day === 11 || day === 18) {
       li.className = 'day friday';
       li.innerHTML = day;
       ul.appendChild(li);
@@ -79,3 +79,21 @@ function createFridaysButton(name) {
 }
 
 createFridaysButton("Sexta-feira");
+
+
+function changeFridaysText(fridays) {
+  const getButton = document.getElementById('btn-friday');
+  const getFridays = document.getElementsByClassName('friday');
+  const fridayText = "Sexta-Feira";
+  getButton.addEventListener('click', function() {
+    for (index = 0; index < getFridays.length; index += 1) {
+      if (getFridays[index].innerHTML !== fridayText) {
+        getFridays[index].innerHTML = fridayText;
+      } else {
+        getFridays[index].innerHTML = fridays[index];
+      }
+    }
+  })
+}
+
+changeFridaysText([4, 11, 18, 25]);
