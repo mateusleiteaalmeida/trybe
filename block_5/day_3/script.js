@@ -40,4 +40,14 @@ function createDaysOfTheMonth(){
     }
   }
 }
-createDaysOfTheMonth()
+createDaysOfTheMonth();
+
+function createHolidays(name) {
+  const button = document.createElement('button');
+  button.id = 'btn-holiday';
+  button.innerHTML = name;
+  const getContainer = document.getElementsByClassName('buttons-container')[0];
+  getContainer.appendChild(button);
+}
+
+createHolidays('Feriados');
