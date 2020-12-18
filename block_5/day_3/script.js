@@ -114,3 +114,13 @@ function zoomOutDayText() {
 
 zoomInDayText();
 zoomOutDayText();
+
+function addTask(task) {
+  const getDiv = document.getElementsByClassName('my-tasks')[0];
+  const addSpan = document.createElement('span');
+  addSpan.innerHTML = task;
+  getDiv.appendChild(addSpan);
+}
+
+addTask("Study");
+
