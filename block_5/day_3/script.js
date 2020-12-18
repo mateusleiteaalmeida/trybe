@@ -51,3 +51,22 @@ function createHolidays(name) {
 }
 
 createHolidays('Feriados');
+
+function colorHolidaysBackground() {
+  const getButton = document.getElementById('btn-holiday');
+  const getHolidays = document.getElementsByClassName('holiday');
+  const color = "rgb(238,238,238)";
+  const newColor = "green";
+  getButton.addEventListener('click', function() {
+    for (index = 0; index < getHolidays.length; index += 1) {
+      if (getHolidays[index].style.background === newColor) {
+        getHolidays[index].style.background = color;
+      } else {
+        getHolidays[index].style.background = newColor;
+      }
+    }
+  })
+}
+
+colorHolidaysBackground();
+
