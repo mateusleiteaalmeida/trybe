@@ -124,3 +124,13 @@ function addTask(task) {
 
 addTask("Study");
 
+function addSubtitle(color) {
+  const getDiv = document.getElementsByClassName('my-tasks')[0];
+  const addDiv = document.createElement('div');
+  addDiv.className = 'task';
+  addDiv.style.background = color;
+  getDiv.appendChild(addDiv);
+}
+
+addSubtitle("green");
+
