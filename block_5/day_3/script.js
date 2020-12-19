@@ -147,3 +147,22 @@ function selectTasks() {
 }
 
 selectTasks();
+
+function colorDaysBackground() {
+  const getDays = document.getElementById('days');
+  const getSelected = document.getElementsByClassName('task selected');
+  const getTask = document.getElementsByClassName('task')[0];
+  const taskColor = getTask.style.backgroundColor;
+  const color = "rgb(119,119,119)";
+  getDays.addEventListener('click', function(event) {
+    let eventColor = event.target.style.color;
+      if (getSelected.length > 0 && eventColor !== taskColor) {
+        let newColor = getSelected[0].style.backgroundColor
+        event.target.style.color = newColor;
+      } else if (getSelected.length > 0 && eventColor === taskColor) {
+        event.target.style.color = color;
+      }
+  })
+}
+
+colorDaysBackground();
