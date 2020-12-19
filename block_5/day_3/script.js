@@ -134,3 +134,16 @@ function addSubtitle(color) {
 
 addSubtitle("green");
 
+function selectTasks() {
+  const getTasks = document.getElementsByClassName('task')[0];
+  const getSelectedTask = document.getElementsByClassName('task selected');
+  getTasks.addEventListener('click', function(event) {
+      if (getSelectedTask.length === 0) {
+        event.target.className = 'task selected';
+      } else {
+        event.target.className = 'task';
+      }
+  })
+}
+
+selectTasks();
