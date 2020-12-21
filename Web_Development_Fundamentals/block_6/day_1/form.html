@@ -39,6 +39,26 @@
           <input type="radio" name="residence-type" id="apartment" value="apartment" required >Apartamento
         </div>
       </fieldset>
+      <fieldset>
+        <div>
+          <label for="cv-resume">Resumo do currículo: </label>
+          <textarea name="cv-resume" id="cv-resume" maxlength="1000" required></textarea>
+        </div>
+        <div>
+          <label for="position">Cargo: </label>
+          <input type="text" name="position" id="position" maxlength="40" required>
+        </div>
+        <div>
+          <label for="position-description">Descrição do cargo: </label>
+          <input type="text" name="position-description" id="position-description" maxlength="500" required>
+        </div>
+        <div>
+          <label for="start-date">Data de início: </label>
+          <input type="text" name="start-date" id="start-date" value="" placeholder="dd/mm/yyyy" onchange="validateInputDate()" required>
+        </div>
+      </fieldset>
+      <button class="submit-button" type="button">Enviar</button>
+      <button class="clear-button" type="button">Limpar</button>
     </form>
     <script src="script.js"></script>
   </body>
