@@ -40,6 +40,17 @@ function submitButton(event) {
   }
 }
 
+function clearButton() {
+  const inputValues = document.getElementsByTagName('input');
+  const textareaValue = document.getElementById('cv-resume');
+  for (index = 0; index < inputValues.length; index += 1) {
+    inputValues[index].value = '';
+    textareaValue.value = '';
+  }
+  const getDiv = document.getElementById('submited-information');
+  getDiv.innerHTML = '';
+}
+
 window.onload = function () {
   createStatesOptions();
 }
