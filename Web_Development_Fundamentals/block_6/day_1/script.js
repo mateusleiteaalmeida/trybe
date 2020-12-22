@@ -29,6 +29,17 @@ function validateInputDate() {
   return userData;
 }
 
+function submitButton(event) {
+  event.preventDefault();
+  const inputValues = document.getElementsByTagName('input');
+  for (index = 0; index < inputValues.length; index += 1) {
+    const createDiv = document.createElement('div');
+    createDiv.innerHTML = inputValues[index].value;
+    const getDiv = document.getElementById('submited-information');
+    getDiv.appendChild(createDiv);
+  }
+}
+
 window.onload = function () {
   createStatesOptions();
 }
