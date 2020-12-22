@@ -9,24 +9,8 @@ function createStatesOptions() {
   }
 }
 
-function validateDate(data) {
-  if (data.match(/^(?:(0[1-9]|1[012])[\- \/.](0[1-9]|[12][0-9]|3[01])[\- \/.](19|20)[0-9]{2})$/)){
-    return true;
-  } else {
-    return false;
-  }
-}
-
-function validateInputDate() {
-  const inputData = document.getElementById('start-date');
-  let data = inputData.value;
-  const userData = validateDate(data);
-  if (!userData && data.length) {
-    inputData.value = '';
-    alert('Data inválida');
-    return false;
-  }
-  return userData;
+function validateDate() {
+  document.getElementById('start-date').DatePickerX.init({ format: 'dd/mm/yyyy' });
 }
 
 function submitButton(event) {
@@ -53,4 +37,5 @@ function clearButton() {
 
 window.onload = function () {
   createStatesOptions();
+  validateDate();
 }
