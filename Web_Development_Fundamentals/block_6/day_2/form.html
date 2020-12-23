@@ -5,66 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="lib/bootstrap.min.css">
     <link rel="stylesheet" href="lib/DatePickerX.min.css">
+    <link rel="stylesheet" href="node_modules/just-validate/dist/css/justValidateTooltip.min.css">
     <title>Formulário</title>
   </head>
   <body>
-    <form>
-      <fieldset>
+    <h1>Formulário</h1>
+    <form action="#" class="js-form form" id="forms">
+      <div class="form-group col-md-6">
+        <label for="name">Nome: </label>
         <div>
-          <label for="name">Nome: </label>
-          <input type="text" name="name" id="name" maxlength="40" required>
+          <input type="text" class="form__input form-control" autocomplete="off" data-validate-field="name" name="name" id="name">
         </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="email">Endereço de e-mail: </label>
         <div>
-          <label for="email">Endereço de e-mail: </label>
-          <input type="email" name="email" id="email" maxlength="50" required>
+          <input type="email" class="form__input form-control" autocomplete="off" data-validate-field="email" name="email" id="email">
         </div>
-        <div>
-          <label for="cpf">CPF: </label>
-          <input type="text" name="cpf" id="cpf" maxlength="11" required>
         </div>
-        <div>
-          <label for="address">Endereço: </label>
-          <input type="text" name="address" id="address" maxlength="200" required>
-        </div>
-        <div>
-          <label for="city">Cidade: </label>
-          <input type="text" name="city" id="city" maxlength="200" required>
-        </div>
-        <div>
-          <label for="state">Estado: </label>
-          <select name="state" id="state" value ="" required>
-          </select>
-        </div>
-        <div>
-          <label for="residence-type">Tipo de imóvel: </label>
-          <input type="radio" name="residence-type" id="house" value="house" required>Casa
-          <input type="radio" name="residence-type" id="apartment" value="apartment" required >Apartamento
-        </div>
-      </fieldset>
-      <fieldset>
-        <div>
-          <label for="cv-resume">Resumo do currículo: </label>
-          <textarea name="cv-resume" id="cv-resume" maxlength="1000" required></textarea>
-        </div>
-        <div>
-          <label for="position">Cargo: </label>
-          <input type="text" name="position" id="position" maxlength="40" required>
-        </div>
-        <div>
-          <label for="position-description">Descrição do cargo: </label>
-          <input type="text" name="position-description" id="position-description" maxlength="500" required>
-        </div>
-        <div>
-          <label for="start-date">Data de início: </label>
-          <input type="text" name="start-date" id="start-date" value="" placeholder="dd/mm/aaaa" required>
-        </div>
-      </fieldset>
-      <button id="submit-button" type="button" onclick="submitButton(event)">Enviar</button>
-      <button id="clear-button" type="button" onclick="clearButton()">Limpar</button>
+      <div class="form-group col-md-6">
+        <label class="col-form-label" for="cpf">CPF: </label>
+        <input type="text" class="form__input form-control" data-validate-field="cpf" name="cpf" id="cpf">
+      </div>
+      <div class="form-group col-md-6">
+        <label class="col-form-label" for="address">Endereço: </label>
+        <input type="text" class="form-control" data-validate-field="address" name="address" id="address">
+      </div>
+      <div class="form-group col-md-6">
+        <label class="col-form-label" for="city">Cidade: </label>
+        <input type="text" class="form-control" data-validate-field="city" name="city" id="city">
+      </div>
+      <div class="form-group col-md-6">
+        <label class="col-form-label" for="state">Estado: </label>
+        <select name="state" class="form-control" data-validate-field="state" id="state" value ="">
+          <option selected="selected" value="">Selecione um estado</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <label class="col-form-label" for="residence-type">Tipo de imóvel: </label>
+          <div class="form-check form-check-inline">
+            <input type="radio" name="residence-type" id="house" value="house" class="form__radio" data-validate-field="radio">Casa
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="radio" name="residence-type" id="apartment" value="apartment" class="form__radio" data-validate-field="radio">Apartamento
+          </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label class="col-form-label" for="cv-resume">Resumo do currículo: </label>
+        <textarea class="form__textarea form-control" data-validate-field="cvResume" name="cv-resume" id="cv-resume" maxlength="1000"></textarea>
+      </div>
+      <div class="form-group col-md-6">
+        <label class="col-form-label" for="position">Cargo: </label>
+        <input class="form-control" data-validate-field="position" type="text" name="position" id="position" maxlength="40">
+      </div>
+      <div class="form-group col-md-6">
+        <label class="col-form-label" for="position-description">Descrição do cargo: </label>
+        <input class="form-control" data-validate-field="positionDescription" type="text" name="position-description" id="position-description" maxlength="500">
+      </div>
+      <div class="form-group col-md-6">
+        <label class="col-form-label" for="start-date">Data de início: </label>
+        <input type="text" class="form-control" name="start-date" id="start-date" value="" placeholder="dd/mm/aaaa" onchange="validateDate()">
+      </div>
+      <button id="submit-button" type="button" onclick="validateAndCopyForm()" class="form__btn btn btn-primary">Enviar</button>
+      <button id="clear-button" type="button" onclick="clearButton()" class="form__btn btn btn-primary">Limpar</button>
     </form>
     <section id="submited-information">
       <p>Informações</p>
     </section>
+    <script src="node_modules/just-validate/dist/js/just-validate.min.js"></script>
     <script src="lib/DatePicker.min.js"></script>
     <script src="script.js"></script>
   </body>
