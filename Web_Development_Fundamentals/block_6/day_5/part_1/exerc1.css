@@ -17,3 +17,28 @@ img {
 figure {
   margin: 20px;
 }
+
+@media (min-width:800px) {
+  body {
+    background-color: aqua;
+    font-size: 25px;
+    margin: 35px;
+  }
+
+  h1 {
+    font-size: 39px;
+  }
+  
+  h2 {
+    font-size: 33px;
+  }
+
+  figure {
+    width: 40%;
+  }
+
+  .figures {
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
