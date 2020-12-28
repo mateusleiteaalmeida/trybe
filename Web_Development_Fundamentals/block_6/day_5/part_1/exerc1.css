@@ -42,3 +42,20 @@ figure {
     flex-flow: row wrap;
   }
 }
+
+@media (min-width: 1300px) {
+  body {
+    background-color: blue;
+    font-size: 35px;
+    margin: 45px;
+    max-width: 1800px;
+  }
+
+  h1 {
+    font-size: 44px;
+  }
+  
+  h2 {
+    font-size: 38px;
+  }
+}
