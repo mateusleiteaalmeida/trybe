@@ -1,0 +1,35 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+@media (max-width:600px) {
+
+  body {
+    font-size: 20px;
+    margin: 35px;
+  }
+
+  h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 25px;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  p {
+    text-align: justify;
+  }
+
+}
