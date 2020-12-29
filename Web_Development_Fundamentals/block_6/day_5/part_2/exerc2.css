@@ -62,3 +62,31 @@ html {
     text-align: justify;
   }
 }
+
+@media (min-width: 1201px) {
+  body {
+    font-size: 24px;
+    margin: 55px;
+  }
+
+  nav ul {
+  display: flex;
+  justify-content: space-around;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+  
+  h2 {
+    font-size: 29px;
+  }
+
+  h3 {
+    font-size: 26px;
+  }
+
+  p {
+    text-align: justify;
+  }
+}
