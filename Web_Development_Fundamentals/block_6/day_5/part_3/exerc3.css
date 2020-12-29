@@ -82,12 +82,55 @@
 }
 
 @media print {
-  #header, #navigation, #footer, #aside {
+  #header, #navigation, #footer {
     display: none;
   }
 
   #content {
     width: 100%;
   }
+
+  #aside {
+    float: none;
+  }
 }
 
+@media (max-width: 600px) {
+  #aside {
+    display: none;
+  }
+
+  * {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  #navigation {
+    display: flexbox;
+    width: 96%;
+    margin: 85px 10px 0px;
+  }
+
+  #navigation ul li a {
+    border: none;
+    float: none;
+  }
+
+  #header {
+    position: fixed;
+    width: 100%;
+  }
+
+  #content {
+    width: 90%;
+    text-align: justify;
+  }
+
+  #footer {
+    text-align: center;
+  }
+}
