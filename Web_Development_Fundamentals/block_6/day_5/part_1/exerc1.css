@@ -1,0 +1,60 @@
+body {
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 34px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  margin: 20px;
+}
+
+@media (min-width:800px) {
+  body {
+    background-color: aqua;
+    font-size: 25px;
+    margin: 35px;
+  }
+
+  h1 {
+    font-size: 39px;
+  }
+  
+  h2 {
+    font-size: 33px;
+  }
+
+  figure {
+    width: 40%;
+  }
+
+  .figures {
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1800px) {
+  body {
+    background-color: blue;
+    font-size: 35px;
+    margin: 45px;
+  }
+
+  h1 {
+    font-size: 44px;
+  }
+  
+  h2 {
+    font-size: 38px;
+  }
+}
