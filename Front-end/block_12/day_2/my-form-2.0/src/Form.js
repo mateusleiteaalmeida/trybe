@@ -48,6 +48,7 @@ class Form extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.validateCity = this.validateCity.bind(this);
     this.saveContent = this.saveContent.bind(this);
+    this.clearContent = this.clearContent.bind(this);
   }
 
   handleChange({ target }) {
@@ -93,6 +94,23 @@ class Form extends Component {
     Cargo: ${position}
     Descrição do cargo: ${positionDescription}
     `
+  }
+
+  clearContent(){
+    this.setState({
+        name: '',
+        email: '',
+        cpf: '',
+        address: '',
+        city: '',
+        countryState: '',
+        residenceType: '',
+        resume: '',
+        position: '',
+        positionDescription: '',
+    })
+    const div = document.querySelector('.saved-content');
+    div.innerHTML = "";
   }
 
   render() {
@@ -228,6 +246,12 @@ class Form extends Component {
           onClick={this.saveContent}
         >
           Enviar formulário
+        </button>
+        <button
+          type="button"
+          onClick={this.clearContent}
+        >
+          Limpar formulário
         </button>
         <div className="saved-content"></div>
       </div>
