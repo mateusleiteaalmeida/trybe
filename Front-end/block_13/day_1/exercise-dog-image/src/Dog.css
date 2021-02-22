@@ -1,0 +1,15 @@
+.dog-container {
+	margin: 30px;
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	max-width: 400px;
+  border: 1px gray solid;
+  border-radius: 10px;
+}
+
+.next-button {
+	height: 40px;
+	margin-top: 20px;
+}

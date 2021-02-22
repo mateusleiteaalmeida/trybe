@@ -1,5 +1,6 @@
 
 import React from 'react';
+import './Dog.css';
 
 class Dog extends React.Component {
   constructor(props){
@@ -15,6 +16,14 @@ class Dog extends React.Component {
 		this.getDog();
 	}
 
+	shouldComponentUpdate(nextProps, nextState){
+		if (nextState.dogImage.includes('terrier')){
+			return false;
+		} else {
+			return true;
+		}
+	}
+
 	getDog(){
 		fetch('https://dog.ceo/api/breeds/image/random')
 		.then(response => response.json())
@@ -28,10 +37,11 @@ class Dog extends React.Component {
   render() {
 		const { dogImage } = this.state;
 		return (
-			<div>
+			<div className="dog-container">
 				{ dogImage == "" ? <p>Loading...</p> : <img src="" className="dog-image"/>}
 				<img src={ dogImage } className="dog-image"/>
 				<button
+					className="next-button"
 					type="button"
 					onClick={ this.handleClick }
 				>Buscar novamente</button>
