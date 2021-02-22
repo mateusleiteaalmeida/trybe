@@ -12,11 +12,11 @@ class Dog extends React.Component {
 		this.handleClick = this.handleClick.bind(this);
   }
 
-	componentDidMount(){
+	componentDidMount() {
 		this.getDog();
 	}
 
-	shouldComponentUpdate(nextProps, nextState){
+	shouldComponentUpdate(nextProps, nextState) {
 		if (nextState.dogImage.includes('terrier')){
 			return false;
 		} else {
@@ -24,6 +24,12 @@ class Dog extends React.Component {
 		}
 	}
 
+	componentDidUpdate() {
+		const { dogImage } = this.state;
+		localStorage.setItem('dogImageURL', dogImage);
+		const dogBreed = dogImage.split('/')[4];
+		alert(dogBreed);
+	}
 	getDog(){
 		fetch('https://dog.ceo/api/breeds/image/random')
 		.then(response => response.json())
@@ -36,10 +42,10 @@ class Dog extends React.Component {
 
   render() {
 		const { dogImage } = this.state;
+		if (dogImage === "") return <p>Loading...</p>;
 		return (
 			<div className="dog-container">
-				{ dogImage == "" ? <p>Loading...</p> : <img src="" className="dog-image"/>}
-				<img src={ dogImage } className="dog-image"/>
+				<img src={ dogImage } alt="Dog" className="dog-image"/>
 				<button
 					className="next-button"
 					type="button"
