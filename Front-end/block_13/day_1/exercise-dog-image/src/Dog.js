@@ -8,6 +8,7 @@ class Dog extends React.Component {
 			dogImage: "",
 		}
 		this.getDog = this.getDog.bind(this);
+		this.handleClick = this.handleClick.bind(this);
   }
 
 	componentDidMount(){
@@ -20,12 +21,20 @@ class Dog extends React.Component {
 		.then(data => this.setState({ dogImage: data.message }));
 	}
 
+	handleClick(){
+		this.getDog();
+	}
+
   render() {
 		const { dogImage } = this.state;
 		return (
 			<div>
 				{ dogImage == "" ? <p>Loading...</p> : <img src="" className="dog-image"/>}
 				<img src={ dogImage } className="dog-image"/>
+				<button
+					type="button"
+					onClick={ this.handleClick }
+				>Buscar novamente</button>
 			</div>
 		)
   }
