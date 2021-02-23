@@ -32,3 +32,7 @@
 	text-align: justify;
 	margin: 60px;
 }
+
+.header {
+	justify-content:space-evenly;
+}

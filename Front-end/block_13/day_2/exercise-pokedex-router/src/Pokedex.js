@@ -3,6 +3,7 @@ import Pokemon from './Pokemon';
 import Button from './Button';
 import './pokedex.css';
 import { Link } from 'react-router-dom';
+import Header from './Header';
 
 class Pokedex extends React.Component {
   constructor(props) {
@@ -42,33 +43,36 @@ class Pokedex extends React.Component {
     const pokemon = filteredPokemons[this.state.pokemonIndex];
 
     return (
-      <div className="pokedex">
-				<h1> Pokedex </h1>
-				<Link to={`/pokemons/${pokemon.id}`}>
-					<Pokemon pokemon={pokemon} />
-				</Link>
-        <div className="pokedex-buttons-panel">
-          <Button
-            onClick={() => this.filterPokemons('all')}
-            className="filter-button">
-            All
-          </Button>
-          {pokemonTypes.map(type => (
-            <Button
-              key={type}
-              onClick={() => this.filterPokemons(type)}
-              className="filter-button">
-              {type}
-            </Button>
-          ))}
-        </div>
-        <Button
-          className="pokedex-button"
-          onClick={() => this.nextPokemon(filteredPokemons.length)}
-          disabled={filteredPokemons.length <= 1}>
-          Próximo pokémon
-        </Button>
-      </div>
+			<div>
+				<Header />
+				<div className="pokedex">
+					<h1> Pokedex </h1>
+					<Link to={`/pokemons/${pokemon.id}`}>
+						<Pokemon pokemon={pokemon} />
+					</Link>
+					<div className="pokedex-buttons-panel">
+						<Button
+							onClick={() => this.filterPokemons('all')}
+							className="filter-button">
+							All
+						</Button>
+						{pokemonTypes.map(type => (
+							<Button
+								key={type}
+								onClick={() => this.filterPokemons(type)}
+								className="filter-button">
+								{type}
+							</Button>
+						))}
+					</div>
+					<Button
+						className="pokedex-button"
+						onClick={() => this.nextPokemon(filteredPokemons.length)}
+						disabled={filteredPokemons.length <= 1}>
+						Próximo pokémon
+					</Button>
+				</div>
+			</div>
     );
   }
 }
