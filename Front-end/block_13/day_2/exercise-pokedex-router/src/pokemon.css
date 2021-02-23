@@ -27,3 +27,8 @@
 .location-map {
 	margin: 10px 40px;
 }
+
+.pokedex-text {
+	text-align: justify;
+	margin: 60px;
+}
