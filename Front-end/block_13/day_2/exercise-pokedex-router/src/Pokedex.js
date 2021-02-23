@@ -2,6 +2,7 @@ import React from 'react';
 import Pokemon from './Pokemon';
 import Button from './Button';
 import './pokedex.css';
+import { Link } from 'react-router-dom';
 
 class Pokedex extends React.Component {
   constructor(props) {
@@ -43,7 +44,9 @@ class Pokedex extends React.Component {
     return (
       <div className="pokedex">
 				<h1> Pokedex </h1>
-        <Pokemon pokemon={pokemon} />
+				<Link to={`/pokemons/${pokemon.id}`}>
+					<Pokemon pokemon={pokemon} />
+				</Link>
         <div className="pokedex-buttons-panel">
           <Button
             onClick={() => this.filterPokemons('all')}
