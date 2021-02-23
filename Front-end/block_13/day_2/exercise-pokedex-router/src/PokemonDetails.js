@@ -1,6 +1,7 @@
 import React from 'react';
 import pokemons from './data';
 import Pokemon from './Pokemon';
+import Header from './Header';
 
 
 class PokemonDetails extends React.Component {
@@ -33,8 +34,9 @@ class PokemonDetails extends React.Component {
 		const { name, type, averageWeight, image, summary, foundAt } = pokemon;
 		return (
 			<div>
+				<Header />
 				<div className="pokemon-details">
-					<h1>Pokemon Details</h1>
+					<h1>Pokémon Details</h1>
 						<p>{name}</p>
 						<p>{type}</p>
 						<p>
