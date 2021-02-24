@@ -1,6 +1,5 @@
 import React from 'react';
 import pokemons from './data';
-import Pokemon from './Pokemon';
 import Header from './Header';
 
 
@@ -49,7 +48,7 @@ class PokemonDetails extends React.Component {
 						{foundAt.map((element) => {
 							return (
 								<div className="location-map">
-									<img src={element.map} className="map"/>
+									<img src={element.map} alt={`${element.location} map`} className="map"/>
 									<p className="location">{element.location}</p>
 								</div>
 							)
