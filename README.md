@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Trybe" title="Trybe" src="./Front-end/block_15/day_3/exercise-portfolio-web/public/trybe.png" width=20%/>
+    <a href="https://www.betrybe.com/"><img alt="Trybe" title="Trybe" src="./Front-end/block_15/day_3/exercise-portfolio-web/public/trybe.png" width=20%/></a>
 </h1>
 
 ## Sobre
