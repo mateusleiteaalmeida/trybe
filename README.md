@@ -13,10 +13,10 @@ _O programa conta com mais de 1.500 horas de aulas presenciais e online e aborda
 ## Sumário
 
 <ul>
-	<li><a href="#-fundamentos">Fundamentos do Desenvolvimento Web</a></li>
-  <li><a href="#-desenvolvimento-front-end">Desenvolvimento Front-end</a></li>
-  <li><a href="#-desenvolvimento-back-end">Desenvolvimento Back-end</a></li>
-  <li><a href="#-ciencia-da-computacao">Ciência da Computação</a></li>
+	<li><a href="#fundamentos">Fundamentos do Desenvolvimento Web</a></li>
+  <li><a href="#desenvolvimento-front-end">Desenvolvimento Front-end</a></li>
+  <li><a href="#desenvolvimento-back-end">Desenvolvimento Back-end</a></li>
+  <li><a href="#ciencia-da-computacao">Ciência da Computação</a></li>
 </ul>
 
 ## Fundamentos do Desenvolvimento Web :heavy_check_mark:
