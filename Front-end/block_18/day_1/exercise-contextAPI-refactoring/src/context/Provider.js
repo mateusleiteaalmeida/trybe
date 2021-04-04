@@ -11,8 +11,12 @@ class Provider extends Component {
         blue: false,
         yellow: false,
       },
+			signal: {
+				color: 'red',
+			},
     }
     this.moveCar = this.moveCar.bind(this);
+		this.changeSignal = this.changeSignal.bind(this);
   }
 
   moveCar(car, side) {
@@ -24,10 +28,20 @@ class Provider extends Component {
     });
   };
 
+	changeSignal(selectedColor) {
+		this.setState({
+      signal: {
+        ...this.state.signal,
+        color: selectedColor,
+      },
+    });
+	}
+
   render() {
     const context = {
       ...this.state,
       moveCar: this.moveCar,
+			changeSignal: this.changeSignal,
     };
 
     const { children } = this.props;
