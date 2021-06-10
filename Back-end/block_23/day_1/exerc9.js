@@ -1,0 +1,7 @@
+db.books.find({},
+{
+  title: 1,
+  isbn: 1,
+  pageCount: 1,
+  _id: 0
+})
